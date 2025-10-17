@@ -375,6 +375,7 @@ public abstract class Student implements Person {
             currentPartStud.calculateGPA();
             System.out.println(currentPartStud.getGPA());
         }
+        sc.close();
     }
 
     private static void ManagingClassSchedule(PartTimeStudent currentPartStud) {
@@ -393,6 +394,7 @@ public abstract class Student implements Person {
             int d2 = sc.nextInt();
             currentPartStud.deleteSchedule(d2);
         }
+        sc.close();
     }
 
     private static void ApplyingDroppingCourses(PartTimeStudent currentPartStud) {
@@ -428,6 +430,7 @@ public abstract class Student implements Person {
         } else if (d1 == 3) {
             currentPartStud.printInfo();
         }
+        sc.close();
     }
 
     
@@ -442,6 +445,7 @@ public abstract class Student implements Person {
         } else if (d1 == 2) {
             currentFullStud.printInfo();
         }
+        sc.close();
     }
 
     private static void GraduationIM(FullTimeStudent currentFullStud) {
@@ -460,6 +464,7 @@ public abstract class Student implements Person {
             currentFullStud.calculateGPA();
             System.out.println(currentFullStud.getGPA());
         }
+        sc.close();
     }
 
     private static void ManagingClassSchedule(FullTimeStudent currentFullStud) {
@@ -478,6 +483,7 @@ public abstract class Student implements Person {
             int d2 = sc.nextInt();
             currentFullStud.deleteSchedule(d2);
         }
+        sc.close();
     }
 
     private static void ApplyingDroppingCourses(FullTimeStudent currentFullStud) {
@@ -514,6 +520,7 @@ public abstract class Student implements Person {
         } else if (d1 == 3) {
             currentFullStud.printInfo();
         }
+        sc.close();
     }
 
 /////////////////////////////////////////////////////////////////////////////////////////////

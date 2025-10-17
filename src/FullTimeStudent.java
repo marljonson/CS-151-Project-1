@@ -52,11 +52,13 @@ public class FullTimeStudent extends Student {
     
         if (arrayIndex < 0 || arrayIndex >= MAX_SLOTS) {
             System.out.println("Please select a valid course slot to delete.");
+            sc.close();
             return;
         }
 
         if (courses[arrayIndex] == null || courses[arrayIndex].getCourseID() == 0) {
             System.out.println("No course scheduled here.");
+            sc.close();
             return;
         }
 
@@ -68,6 +70,8 @@ public class FullTimeStudent extends Student {
         } else {
             System.out.println("That course wasn't in your viewable schedule.");
         }
+
+        sc.close();
     }
 
     //4th METHOD OVERRIDE
@@ -112,6 +116,7 @@ public class FullTimeStudent extends Student {
             count++;
         }
         System.out.println("\nYou removed " + count + " course(s).");
+        sc.close();
     }
     
     //Method 2
@@ -138,6 +143,7 @@ public class FullTimeStudent extends Student {
             count++;
         }
         System.out.println("\nYou added " + count + " course(s).");
+        sc.close();
     }
     
     // Method 3
@@ -163,9 +169,10 @@ public class FullTimeStudent extends Student {
                 System.out.println("Changing Student Roadmap...");
                 roadmapCourseList.clear();
                 this.createRoadmap(major);
-                } else {
-                    System.out.println("Cannot switch major (GPA restriction not met)");
-                }
+                sc.close();
+            } else {
+                System.out.println("Cannot switch major (GPA restriction not met)");
+        }
             } catch (NoSuchElementException e) {
                 System.out.println("No input provided. Major has not been changed.");
             } catch (Exception e) {

@@ -52,11 +52,13 @@ public class PartTimeStudent extends Student {
     
         if (arrayIndex < 0 || arrayIndex >= MAX_SLOTS) {
             System.out.println("Please select a valid course slot to delete.");
+            sc.close();
             return;
         }
 
         if (courses[arrayIndex] == null || courses[arrayIndex].getCourseID() == 0) {
             System.out.println("No course scheduled here.");
+            sc.close();
             return;
         }
 
@@ -113,6 +115,7 @@ public class PartTimeStudent extends Student {
             count++;
         }
         System.out.println("\nYou removed " + count + " course(s).");
+        sc.close();
     }
     
     //Method 2
@@ -139,6 +142,7 @@ public class PartTimeStudent extends Student {
             count++;
         }
         System.out.println("\nYou added " + count + " course(s).");
+        sc.close();
     }
     
     //Method 3
@@ -146,7 +150,7 @@ public class PartTimeStudent extends Student {
         try {
             if (this.getGPA() >= 3.2) {
                 final java.util.Set<String> allowed = java.util.Set.of("CS", "CMPE", "ENGR");
-                java.util.Scanner sc = new java.util.Scanner(System.in);
+                Scanner sc = new Scanner(System.in);
     
                 String major;
                 while (true) {
@@ -154,6 +158,7 @@ public class PartTimeStudent extends Student {
                     String input = sc.next().trim().toUpperCase();
                     if (allowed.contains(input)) {
                         major = input;
+                        sc.close();
                         break;
                     }
                     System.out.println("Invalid input. Please enter one of: CS, CMPE, ENGR.");
@@ -163,9 +168,9 @@ public class PartTimeStudent extends Student {
                 System.out.println("Changing Student Roadmap...");
                 roadmapCourseList.clear();
                 this.createRoadmap(major);
-                } else {
-                    System.out.println("Cannot switch major (GPA restriction not met)");
-                }
+            } else {
+                System.out.println("Cannot switch major (GPA restriction not met)");
+            }
              } catch (NoSuchElementException e) {
                 System.out.println("No input provided. Major has not been changed.");
              } catch (Exception e) {
