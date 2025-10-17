@@ -26,4 +26,11 @@ public class AcademicTest {
         int newGrade = g.extraCredit(originalGrade, extraPoints);
         assertEquals(newGrade, 85);
     }
+
+    @Test
+    public void testConvertGradeIDToPassFail() {
+        Grade g = new Grade();
+        g.setGradeID(50);
+        assertEquals(g.convertGradeIDToPassFail(50), "Fail");
+    }
 }
