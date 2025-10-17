@@ -19,8 +19,11 @@ public class AcademicTest {
     }
 
     @Test 
-    public void extraCredit() {
-        Grade extra = new Grade();
-        assertEquals(extra, extra.extraCredit(13));
+    public void testExtraCredit() {
+        Grade g = new Grade();
+        int originalGrade = 70;
+        int extraPoints = 15;
+        int newGrade = g.extraCredit(originalGrade, extraPoints);
+        assertEquals(newGrade, 85);
     }
 }

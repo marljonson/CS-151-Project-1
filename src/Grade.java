@@ -118,6 +118,11 @@ public class Grade {
         return newGrade;
     }
 
+    // Overloaded method 3 for testing purposes
+    public int extraCredit(int gradeID, int extraPoints) {
+        return gradeID + extraPoints;
+    }
+
     // Method 4
     public String convertGradeIDToPassFail(int gradeID) 
     {
