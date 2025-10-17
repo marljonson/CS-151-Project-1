@@ -33,4 +33,11 @@ public class AcademicTest {
         g.setGradeID(50);
         assertEquals(g.convertGradeIDToPassFail(50), "Fail");
     }
+
+    @Test
+    public void testCurveGrade() {
+        Grade g = new Grade();
+        g.setGradeID(50);
+        assertEquals(g.curveGrade(50, 0.10), 55.0);
+    }
 }

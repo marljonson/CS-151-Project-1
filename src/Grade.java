@@ -97,6 +97,13 @@ public class Grade {
         return curvedGrade;
     }
 
+    // Overloaded method 2 for testing purposes
+    public double curveGrade(int gradeID, double curveFactor)
+    {
+        double curvedGrade = gradeID + (gradeID * curveFactor);
+        return curvedGrade;
+    }
+
     // Method 3
     public int extraCredit(int gradeID)
     {
