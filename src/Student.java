@@ -334,12 +334,12 @@ public abstract class Student implements Person {
                 } else {
                     continue;
                 }
-            }else {
+            } else {
                 System.out.println("Invalid Input (Try Again)");
                 continue;
             }
         }
-        
+        sc.close();
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////
@@ -356,6 +356,7 @@ public abstract class Student implements Person {
         } else if (d1 == 2) {
             currentPartStud.printInfo();
         }
+        sc.close();
     }
 
     private static void GraduationIM(PartTimeStudent currentPartStud) {

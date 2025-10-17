@@ -101,6 +101,8 @@ public class Professor implements Person  {
         } catch (Exception e) {
             System.out.println("Error has occurred in the program: " + e.getMessage());
             return null;
+        } finally {
+            scanner.close();
         }
     }
 
@@ -129,6 +131,8 @@ public class Professor implements Person  {
             }
             count++;
         }
+
+        scanner.close();
     }
     
     public boolean checkIfCourseIsTaughtByProfessor(Course c) {
@@ -165,6 +169,8 @@ public class Professor implements Person  {
             }
             count++;
         }
+
+        scanner.close();
     }
     
     // Method 3
@@ -174,6 +180,7 @@ public class Professor implements Person  {
         int profInput = scanner.nextInt();
         if (profInput != this.professorID) {
            System.out.println("Error: Wrong Professor ID. Please Try Again.");
+           scanner.close();
            return;
         }
         System.out.println("Enter Course ID to set your desired Office Hours for:");
@@ -189,11 +196,13 @@ public class Professor implements Person  {
         int officeHoursSlot = scanner.nextInt();
         if (officeHoursSlot == courseEX.getTime()) {
             System.out.println("Error: Conflicting with course time!");
+            scanner.close();
             return;
         }
         officeHours.put(courseEX.getCourseName(), officeHoursSlot);
         System.out.println(courseEX.getCourseName() + "| Office Hours: " + officeHoursSlot);
 
+        scanner.close();
     }
     
     // Method 4
@@ -203,6 +212,7 @@ public class Professor implements Person  {
         int profInput = scanner.nextInt();
         if (profInput != this.professorID) {
             System.out.println("Error: Wrong Professor ID. Please Try Again.");
+            scanner.close();
             return;
         }
         System.out.println("Enter Course ID to remove Office Hours for:");
@@ -216,11 +226,14 @@ public class Professor implements Person  {
         }
         if (!officeHours.containsKey(courseEX.getCourseName())) {
             System.out.println("No office hours set for this course.");
+            scanner.close();
             return;
         }
         officeHours.remove(courseEX.getCourseName());
         System.out.println("Removed office hours for: " + courseEX.getCourseName());
         System.out.println(courseEX.getCourseName() + "| Office Hours: N/A");
+
+        scanner.close();
     }
 
     @Override
