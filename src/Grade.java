@@ -92,7 +92,7 @@ public class Grade {
                 sc.next(); 
             }
         }
-        double curvedGrade = gradeID * curveFactor;
+        double curvedGrade = gradeID + (gradeID * curveFactor);
         sc.close();
         return curvedGrade;
     }
