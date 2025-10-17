@@ -40,4 +40,11 @@ public class AcademicTest {
         g.setGradeID(50);
         assertEquals(g.curveGrade(50, 0.10), 55.0);
     }
+
+    @Test
+    public void testConvertGradeID() {
+        Grade g = new Grade();
+        g.setGradeID(85);
+        assertEquals(g.convertGradeID(g.getGradeID(), Person.c1), "B");
+    }
 }
