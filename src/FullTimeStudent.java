@@ -37,7 +37,7 @@ public class FullTimeStudent extends Student {
                 slot++;
             }
         }
-        return "Schedule displayed.";
+        return "Schedule displayed.\n";
     }
 
     //3rd METHOD OVERRIDE
