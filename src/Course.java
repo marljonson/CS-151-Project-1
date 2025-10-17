@@ -1,6 +1,5 @@
 package src;
 
-
 public class Course {
 
     private int courseID;
@@ -9,7 +8,7 @@ public class Course {
     private int time;
     private boolean passFail;
 
-
+    // arg constructor
     public Course(int courseID, String courseName, int credits, int time, boolean passFail) {
         this.courseID = courseID;
         this.courseName = courseName;
@@ -18,6 +17,7 @@ public class Course {
         this.passFail = passFail;
     }
 
+    // no-arg constructor
     public Course() {
         this.courseID = 0;
         this.courseName = "NA";

@@ -68,6 +68,8 @@ public class PartTimeStudent extends Student {
         } else {
             System.out.println("That course wasn't in your viewable schedule.");
         }
+        
+        sc.close();
     }
     
     // 4th METHOD OVERRIDE
